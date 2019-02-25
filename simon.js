@@ -3,7 +3,7 @@ function Simon($simon, options){
   let sequence = [];
 
   function goToLevel(level){
-    for(i=1; i <= level; i ++){
+    for(i=sequence.length; i < level; i ++){
       sequence.push(randomColors = colors[Math.floor(Math.random()*colors.length)]);
     }
   }
@@ -32,6 +32,10 @@ function Simon($simon, options){
    }, options.intervalDuration);
   }
 
-  goToLevel(5);
-  run();
+  return {
+    play: function(){
+      nextLevel();
+      run();
+    }
+  };
 }
