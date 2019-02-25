@@ -1,4 +1,4 @@
-function Simon($simon){
+function Simon($simon, options){
   const colors = ["red", "green","yellow", "blue"];
 
   function run(){
@@ -14,7 +14,11 @@ function Simon($simon){
     $simon.style.backgroundColor = color;
 
     i++;
-   }, 1000);
+
+    setTimeout(function(){
+      $simon.style.backgroundColor = "transparent";
+    }, options.intervalDuration - 200);
+   }, options.intervalDuration);
   }
 
   run();
