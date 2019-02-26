@@ -15,21 +15,34 @@ function Simon($simon, options){
     goToLevel(sequence.length+1);
   }
 
-  // Enregistrer les réponses
   function fillUserAnswer(color){
+  // On valid la réponse
+    const currentIndex = userAnswer.length;
+    const solution = sequence[currentIndex];
+
+    if(solution !== color){
+      gameOver();
+      return;
+    }
+
+  // Enregistrer les réponses
     userAnswer.push(color);
+  //   if(userAnswer.length === sequence.length){
+  //      compare array
+  //   }
+
   }
 
   // Valider les réponses
-  function validAnswer(level){
-    for(let i=0; i<level; i++){
-      if (sequence[i] === userAnswer[i]){
+  // function validAnswer(level){
+  //   for(let i=0; i<level; i++){
+  //     if (sequence[i] === userAnswer[i]){
 
-      } else {
+  //     } else {
 
-      }
-    }
-  }
+  //     }
+  //   }
+  // }
 
   function run(){
     let i = 0;
@@ -51,14 +64,20 @@ function Simon($simon, options){
    }, options.intervalDuration);
   }
 
+    function gameOver(){
+      alert("GAME OVER");
+      //reset la séquence
+      sequence = [];
+      goToLevel(0);
+    }
+
   return {
     play: function(){
       nextLevel();
       run();
     },
-    answer: function(color, level){
+    answer: function(color){
       fillUserAnswer(color);
-      validAnswer(level);
-    }
+    },
   };
 }
