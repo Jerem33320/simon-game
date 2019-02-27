@@ -3,7 +3,7 @@ function Simon($simon, options) {
    * Determines whether the player can play this level or not
    */
   let isRunning = false;
-
+  let isAnswerAllowed = false;
   /**
    * Available colors
    */
@@ -25,6 +25,8 @@ function Simon($simon, options) {
    * @param {string} answer
    */
   function registerAnswer(answer) {
+    if(!isAnswerAllowed) return;
+
     if (!colors.includes(answer)) {
       console.error("Invalid color, answer ignored...");
       return;
@@ -79,6 +81,7 @@ function Simon($simon, options) {
     // Reset the player answsers
     playerAnswers = [];
     isRunning = false;
+    isAnswerAllowed = false;
   }
 
   function nextLevel() {
@@ -89,8 +92,10 @@ function Simon($simon, options) {
     // Can't run the game if already running
     if (isRunning) return;
 
+
     // Toggle flag
     isRunning = true;
+
 
     let i = 0;
     const interval = setInterval(function() {
@@ -98,6 +103,7 @@ function Simon($simon, options) {
       // On arrete l'intervale si on a atteint la fin de la liste des couleurs
       if (!color) {
         clearInterval(interval);
+        isAnswerAllowed = true;
         return;
       }
 
@@ -128,7 +134,7 @@ function Simon($simon, options) {
     // reset sequence
     sequence = [];
     // reset level
-    goToLevel(0);
+    goToLevel(1);
   }
 
   // Start at level 1
