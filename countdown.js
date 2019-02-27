@@ -20,26 +20,26 @@ const $div = document.getElementById("countdown");
 //   }, (start - i +1) *1000);
 // }
 
-function CountDown(){
+// function CountDown(){
 
-let count = 0;
+// let count = 0;
 
-  function start(){
-    for(let i = count; i < 1000; i++){
-      setTimeout(function(){
-        $div.textContent = i;
-      }, (count+i) * 1000);
-    }
-  }
-  function stop(){
-    $div.addEventListener("click", function(){
+//   function start(){
+//     for(let i = count; i < 1000; i++){
+//       setTimeout(function(){
+//         $div.textContent = i;
+//       }, (count+i) * 1000);
+//     }
+//   }
+//   function stop(){
+//     $div.addEventListener("click", function(){
 
-    });
-  }
-  function reset(){
+//     });
+//   }
+//   function reset(){
 
-  }
-  start();
-}
+//   }
+//   start();
+// }
 
-CountDown();
+// CountDown();

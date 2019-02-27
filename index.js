@@ -1,6 +1,7 @@
 // Waiting for the DOM before launching the application
 document.addEventListener("DOMContentLoaded", function() {
-  console.log("Dom ready :)");
+  let pseudo = prompt("HELOW SIKOA TOPTI NOM?") || "toto2000";
+  localStorage.setItem("username", pseudo);
 
   // Select the DOM elements
   const $div = document.getElementById("simon");
