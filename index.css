@@ -1,0 +1,22 @@
+body {
+  font-family: sans-serif;
+}
+
+#simon {
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+
+  transition: background-color 0.1s ease;
+}
+
+.answer-btn {
+  width: 100px;
+  height: 100px;
+}
+
+[data-color="red"] { background-color: red; }
+[data-color="blue"] { background-color: blue; }
+[data-color="green"] { background-color: green; }
+[data-color="yellow"] { background-color: yellow; }
+

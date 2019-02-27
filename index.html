@@ -1,22 +1,25 @@
-<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Simon</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
-  <div id="simon"></div>
-  <button id="play">Play</button>
-  <div class="colored-btn">
-    <button style="color:blue;" id="blue-btn">blue</button>
-    <button style="color:yellow;" id="yellow-btn">yellow</button>
-    <button style="color:red;" id="red-btn">red</button>
-    <button style="color:green;" id="green-btn">green</button>
-  </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Simon</title>
 
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div id="simon"></div>
+    <button id="play">Play !</button>
 
-  <script type="text/javascript" src="simon.js"></script>
-  <script type="text/javascript" src="index.js"></script>
-</body>
+    <div>
+      <button class="answer-btn" data-color="red"></button>
+      <button class="answer-btn" data-color="blue"></button>
+      <button class="answer-btn" data-color="green"></button>
+      <button class="answer-btn" data-color="yellow"></button>
+    </div>
+
+    <script src="utils.js"></script>
+    <script src="simon.js"></script>
+    <script src="index.js"></script>
+  </body>
 </html>
