@@ -54,7 +54,7 @@ function Simon($simon, options) {
 
     // Go to next level if all answers are valid :)
     if (playerAnswers.length === sequence.length) {
-      nextLevel();
+      levelCompleted();
     }
   }
 
@@ -111,6 +111,16 @@ function Simon($simon, options) {
         $simon.style.backgroundColor = "transparent";
       }, options.intervalDuration - 200);
     }, options.intervalDuration);
+  }
+
+  function levelCompleted(){
+    nextLevel();
+
+    let conf = confirm('Good JOB, next level?');
+
+    if(conf){
+      run();
+    }
   }
 
   function gameOver() {
