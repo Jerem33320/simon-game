@@ -73,6 +73,9 @@ function Simon($simon, options) {
    * @param {number} level
    */
   function goToLevel(level) {
+    if(level < 1){
+      level = 1;
+    }
     // Compute the color sequence
     for (let i = sequence.length; i < level; i++) {
       sequence.push(getRandomColor());
