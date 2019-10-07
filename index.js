@@ -1,6 +1,6 @@
 // Waiting for the DOM before launching the application
 document.addEventListener("DOMContentLoaded", function() {
-  let pseudo = prompt("HELOW SIKOA TOPTI NOM?") || "toto2000";
+  let pseudo = prompt("Bonjour, quel est votre Pseudo?") || "toto2000";
   localStorage.setItem("username", pseudo);
 
   // Select the DOM elements
